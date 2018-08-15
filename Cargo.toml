@@ -1,0 +1,34 @@
+[package]
+
+name = "hyper-old-types"
+version = "0.11.0" # don't forget to update html_root_url
+description = "HTTP types from hyper 0.11.x"
+homepage = "https://hyper.rs"
+documentation = "https://docs.rs/hyper-old-types"
+repository = "https://github.com/hyperium/hyper-old-types"
+license = "MIT"
+authors = ["Sean McArthur <sean@seanmonstar.com>"]
+keywords = []
+
+include = [
+  "Cargo.toml",
+  "LICENSE",
+  "src/**/*"
+]
+
+[dependencies]
+base64 = "0.9"
+bytes = "0.4.4"
+http = { version = "0.1", optional = true }
+httparse = "1.0"
+language-tags = "0.2"
+log = "0.4"
+mime = "0.3.2"
+percent-encoding = "1.0"
+time = "0.1"
+unicase = "2.0"
+
+[features]
+default = []
+compat = ["http"]
+nightly = []
