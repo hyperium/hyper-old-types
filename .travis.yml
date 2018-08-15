@@ -1,0 +1,17 @@
+language: rust
+sudo: false
+dist: trusty
+matrix:
+    fast_finish: true
+    include:
+        - rust: nightly
+          env: FEATURES="--features nightly"
+        - rust: beta
+        - rust: stable
+        - rust: stable
+          env: FEATURES="--features compat"
+        - rust: 1.21.0
+
+script:
+  - cargo build $FEATURES
+  - 'if [ "$BUILD_ONLY" != "1" ]; then cargo test $FEATURES; fi'
